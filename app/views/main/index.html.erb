@@ -10,5 +10,23 @@
 </head>
 <body>
     <h1>Huli Landing Page</h1>
+
+    <% @projects.each do |project| %>
+      <h3>Projects</h3>
+      <table>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td><%= project.title %></td>
+          <td><%= project.description %></td>
+        </tr>
+      </table>
+    <% end %>
+
+    <% if admin_signed_in? %>
+      <%= link_to "Add Project", new_project_path %>
+    <% end %>
 </body>
 </html>
