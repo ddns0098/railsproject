@@ -1,5 +1,9 @@
 <%= simple_form_for @project do |p| %>
+  <div class="form-group">
     <%= p.input :title, label: "Project Label" %>
+  </div>
+  <div class="form-group">
     <%= p.input :description, label: "Project Description" %>
-    <%= p.button :submit %>
+  </div>
+  <%= p.button :submit %>
 <% end %>

@@ -9,13 +9,17 @@
   </head>
   <body>
 
-  <nav class="navbar navbar-dark bg-dark">
+  <nav class="navbar navbar-fixed-top navbar-inverse">
     <div class="container">
       <div class="navbar-header">
+        <% if admin_signed_in? %>
+        <%= link_to "Home", admin_path, class: "navbar-brand" %>
+        <% else %>
         <%= link_to "Home", root_path, class: "navbar-brand" %>
+        <% end %>
       </div>
       <ul class="nav navbar-nav">
-        <% if admin_signed_in? %>
+        <% if admin_signed_in? && request.env['PATH_INFO'] != "/" %>
           <li><%= link_to "Sign Out", destroy_admin_session_path, method: :delete %></li>
           <li><%= link_to "Add Project", new_project_path %></li>
         <% else %>
