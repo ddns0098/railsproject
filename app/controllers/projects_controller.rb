@@ -13,9 +13,17 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def edit
+    @project = find_project
+  end
+
   private
 
   def project_params
     params.require(:project).permit(:title, :description)
+  end
+
+  def find_project
+    @project = Project.find(params[:id])
   end
 end

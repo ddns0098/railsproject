@@ -9,7 +9,7 @@
     <%= csrf_meta_tags %>
 </head>
 <body>
-    <h1>Huli Landing Page</h1>
+    <h1>Huli Landing Admin Page</h1>
 
     <h3>Projects</h3>
       <table>
@@ -21,6 +21,7 @@
         <tr>
           <td><%= project.title %></td>
           <td><%= project.description %></td>
+          <td><%= link_to "Edit", edit_project_path(project), {:class => "btn btn-secondary btn-lg", :role => "button"} %></td>
         </tr>
         <% end %>
       </table>
