@@ -23,7 +23,7 @@
         <% @projects.each do |project| %>
         <tr>
           <% if project.avatar_stored? %>
-          <td><%= image_tag project.avatar.thumb('300x300#').url ,class: "img-thumbnail" %></td>
+          <td><%= image_tag project.avatar.url ,class: "img-thumbnail" %></td>
           <% end %>
           <td><%= project.title %></td>
           <td><%= project.description %></td>
