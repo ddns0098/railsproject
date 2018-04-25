@@ -1,4 +1,7 @@
-<%= simple_form_for @project do |p| %>
+<%= simple_form_for @project, html: {multipart: true} do |p| %>
+  <div class="form-group">
+    <%= p.file_field :avatar, as: :file %>
+  </div>
   <div class="form-group">
     <%= p.input :title, label: "Project Label" %>
   </div>
