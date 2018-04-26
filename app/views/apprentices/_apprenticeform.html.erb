@@ -1,0 +1,9 @@
+<%= simple_form_for @apprentice, html: {multipart: true} do |a| %>
+  <div class="form-group">
+    <%= a.input :name, label: "Apprentice Name" %>
+  </div>
+  <div class="form-group">
+    <%= a.input :git, label: "Git Page" %>
+  </div>
+  <%= a.button :submit %>
+<% end %>

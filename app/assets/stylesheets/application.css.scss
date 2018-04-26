@@ -15,3 +15,23 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+html body {
+  font-size: 2.5em;
+}
+
+.img-thumbnail {
+  display: block;
+  max-width:50px;
+  max-height:50px;
+  width: auto;
+  height: auto;
+}
+
+#title {
+  color: antiquewhite;
+  background-color: #2E2F30;
+  height: 70px;
+  padding-top: 20px;
+  margin-bottom: 0;
+}

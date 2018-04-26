@@ -3,6 +3,8 @@ class AdminsController < ApplicationController
 
   def index
     @projects = Project.all
+    @teams = Team.all.eager_load(:apprentices)
+    @apprentices = Apprentice.all
   end
 
   private

@@ -1,0 +1,13 @@
+<%= simple_form_for @team, html: {multipart: true} do |t| %>
+  <div class="form-group">
+    <%= t.file_field :avatar, as: :file %>
+  </div>
+  <div class="form-group">
+    <%= t.input :name, label: "Team Name" %>
+  </div>
+  <div class="form-group">
+    <%= t.label "Team Apprentices" %>
+    <%= t.collection_select :apprentice_ids, Apprentice.all, :id, :name, {}, {multiple: true} %>
+  </div>
+  <%= t.button :submit %>
+<% end %>

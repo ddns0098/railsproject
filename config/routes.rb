@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  resources :dragonfly_images
   resources :projects
+  resources :teams
+  resources :apprentices
   devise_for :admins, controllers: {
       sessions: 'admins/sessions'
   }

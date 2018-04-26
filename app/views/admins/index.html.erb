@@ -11,7 +11,7 @@
 <body>
     <h1>Huli Landing Admin Page</h1>
 
-    <h3>Projects</h3>
+    <h3 id="title">Projects</h3>
       <table class="table table-striped table-responsive">
         <tr>
           <th></th>
@@ -32,5 +32,49 @@
         </tr>
         <% end %>
       </table>
+
+    <h3 id="title">Teams</h3>
+    <table class="table table-striped table-responsive">
+      <tr>
+        <th></th>
+        <th>Name</th>
+        <th>Apprentices</th>
+        <th></th>
+        <th></th>
+      </tr>
+      <% @teams.each do |team| %>
+        <tr>
+          <% if team.avatar_stored? %>
+            <td><%= image_tag team.avatar.url, class: "img-thumbnail" %></td>
+          <% end %>
+          <td><%= team.name %></td>
+          <td>
+            <%= team.apprentices.each do |a| %>
+              <%= a.name %>
+            <% end %>
+          </td>
+          <td><%= link_to "Edit", edit_team_path(team), :class => "btn btn-default btn-lg", :role => "button" %></td>
+          <td><%= link_to "Delete", team_path(team), method: :delete, data: {confirm: "Are you sure?"}, :class => "btn btn-default btn-lg", :role => "button" %></td>
+        </tr>
+      <% end %>
+    </table>
+
+    <h3 id="title">Apprentices</h3>
+    <table class="table table-striped table-responsive">
+      <tr>
+        <th>Name</th>
+        <th>Git Page</th>
+        <th></th>
+        <th></th>
+      </tr>
+      <% @apprentices.each do |apprentice| %>
+        <tr>
+          <td><%= apprentice.name %></td>
+          <td><%= apprentice.git %></td>
+          <td><%= link_to "Edit", edit_apprentice_path(apprentice), :class => "btn btn-default btn-lg", :role => "button" %></td>
+          <td><%= link_to "Delete", apprentice_path(apprentice), method: :delete, data: {confirm: "Are you sure?"}, :class => "btn btn-default btn-lg", :role => "button" %></td>
+        </tr>
+      <% end %>
+    </table>
 </body>
 </html>

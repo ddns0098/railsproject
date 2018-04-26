@@ -22,6 +22,8 @@
         <% if admin_signed_in? && request.env['PATH_INFO'] != "/" %>
           <li><%= link_to "Sign Out", destroy_admin_session_path, method: :delete %></li>
           <li><%= link_to "Add Project", new_project_path %></li>
+          <li><%= link_to "Add Team", new_team_path %></li>
+          <li><%= link_to "Add Apprentice", new_apprentice_path %></li>
         <% else %>
           <li><%= link_to "Log In", new_admin_session_path %></li>
         <% end %>
