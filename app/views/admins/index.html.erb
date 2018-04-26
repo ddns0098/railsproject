@@ -49,8 +49,8 @@
           <% end %>
           <td><%= team.name %></td>
           <td>
-            <%= team.apprentices.each do |a| %>
-              <%= a.name %>
+            <% team.apprentices.each do |a| %>
+              - <%= a.name %>
             <% end %>
           </td>
           <td><%= link_to "Edit", edit_team_path(team), :class => "btn btn-default btn-lg", :role => "button" %></td>

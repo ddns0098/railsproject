@@ -43,8 +43,8 @@
           <% end %>
           <td><%= team.name %></td>
           <td>
-            <%= team.apprentices.each do |a| %>
-              <%= a.name %>
+            <% team.apprentices.each do |a| %>
+              - <%= a.name %>
             <% end %>
           </td>
         </tr>
